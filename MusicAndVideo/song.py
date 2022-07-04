@@ -23,11 +23,11 @@ async def song(client, message: Message):
     if not urlissed:
         await client.send_message(
             message.chat.id,
-            "-› يرجى اعطاء اسم الاغنية او راجع زر الاوامر لمعرفة استخدامي ⚡️.",
+            "-› ابعت اسم الاغنيه اللي عاوزني اشغلها 🌚.",
         )
         return
     pablo = await client.send_message(
-        message.chat.id, f"**اسم الاغنية ⚡️ :** `{urlissed}`"
+        message.chat.id, f"**اسم الاغنية 🤓 :** `{urlissed}`"
     )
     search = SearchVideos(f"{urlissed}", offset=1, mode="dict", max_results=1)
     mi = search.result()
@@ -67,8 +67,8 @@ async def song(client, message: Message):
         return
     c_time = time.time()
     capy = f"""
-** الاسم ⚡️:** [{thum}]({mo})
-** طلب بواسطة ⚡️:** {message.from_user.mention}
+** الاسم 🤓:** [{thum}]({mo})
+** طلب الكائن دا 🤓:** {message.from_user.mention}
 """
     file_stark = f"{ytdl_data['id']}.mp3"
     await client.send_audio(
@@ -83,7 +83,7 @@ async def song(client, message: Message):
         progress_args=(
             pablo,
             c_time,
-            f"** اسم الاغنية ⚡️ :** `{urlissed}`",
+            f"** اسم الاغنية 🤓 :** `{urlissed}`",
             file_stark,
         ),
     )
@@ -140,7 +140,7 @@ async def progress(current, total, message, start, type_of_ps, file_name=None):
         if file_name:
             try:
                 await message.edit(
-                    "{}\n**اسم الملف ⚡️:** `{}`\n{}".format(type_of_ps, file_name, tmp)
+                    "{}\n**اسم الملف 🤓:** `{}`\n{}".format(type_of_ps, file_name, tmp)
                 )
             except FloodWait as e:
                 await asyncio.sleep(e.x)
@@ -238,11 +238,11 @@ async def vsong(client, message: Message):
     urlissed = get_text(message)
 
     pablo = await client.send_message(
-        message.chat.id, f"** اسم الاغنية ⚡️ :** `{urlissed}`"
+        message.chat.id, f"** اسم الفديو 🤓 :** `{urlissed}`"
     )
     if not urlissed:
         await pablo.edit(
-            "-› يرجى اعطاء اسم الاغنية او راجع زر الاوامر لمعرفة استخدامي ⚡️."
+            "-› ابعت اسم الفديو اللي عاوزني اشغلو 🤓."
         )
         return
 
@@ -278,8 +278,8 @@ async def vsong(client, message: Message):
     c_time = time.time()
     file_stark = f"{ytdl_data['id']}.mp4"
     capy = f"""
-** الاسم ⚡️:** [{thum}]({mo})
-** طلب بواسطة ⚡️:** {message.from_user.mention}
+** الاسم 🤓:** [{thum}]({mo})
+** طلب الكائن دا 🤓:** {message.from_user.mention}
 """
     await client.send_video(
         message.chat.id,
@@ -293,7 +293,7 @@ async def vsong(client, message: Message):
         progress_args=(
             pablo,
             c_time,
-            f"** اسم الاغنيه ⚡️ :** `{urlissed}`",
+            f"** اسم الاغنيه 🤓 :** `{urlissed}`",
             file_stark,
         ),
     )
