@@ -23,7 +23,7 @@ async def showid(_, message: Message):
             )
             file_info = get_file_id(message.reply_to_message)
         else:
-            _id += "<b>-› يدي الكائن اللي طلبو</b>: " f"<code>{message.from_user.id}</code>\n"
+            _id += "<b>-› ايدي الكائن اللي طلبو</b>: " f"<code>{message.from_user.id}</code>\n"
             file_info = get_file_id(message)
         if file_info:
             _id += (
