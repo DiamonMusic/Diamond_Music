@@ -15,17 +15,17 @@ async def skip(client, m: Message):
     if len(m.command) < 2:
         op = await skip_current_song(chat_id)
         if op == 0:
-            await m.reply("**لايوجد شئ يشتغل حب ⚡️.**")
+            await m.reply("**مفيش حاجه شغاله يا اعمى 🤓.**")
         elif op == 1:
-            await m.reply("لايوجد شئ في المكالمة تم ايقاف جميع الاغاني ⚡️**")
+            await m.reply("مفيش حاجه شغاله كلها اتقفلت 👀**")
         else:
             await m.reply(
-                f"**تم التخطي عيني ⚡️** \n**تم تشغيل الاغنية التالية** - [{op[0]}]({op[1]}) | `{op[2]}`",
+                f"**اتخطيت الاغنيه اهو 🤓** \n**شقلب واقلب محدش واخد باله 😂** - [{op[0]}]({op[1]}) | `{op[2]}`",
                 disable_web_page_preview=True,
             )
     else:
         skip = m.text.split(None, 1)[1]
-        OP = "**🗑️ تمت إزالة الأغاني التالية من قائمة الانتظار: -**"
+        OP = "**حذفت كل الاغاني اللي فقايمة الانتظار امشي بق من هنا 😢: -**"
         if chat_id in QUEUE:
             items = [int(x) for x in skip.split(" ") if x.isdigit()]
             items.sort(reverse=True)
@@ -50,11 +50,11 @@ async def stop(client, m: Message):
         try:
             await call_py.leave_group_call(chat_id)
             clear_queue(chat_id)
-            await m.reply("**تم ايقاف الاغنية بنجاح ⚡️.**")
+            await m.reply("**لما مش هتسمعها مشغلها لييييه 🙄.**")
         except Exception as e:
             await m.reply(f"**ERROR** \n`{e}`")
     else:
-        await m.reply("**لايوجد شئ يشتغل حب ⚡.**")
+        await m.reply("**مفيش حاجه شغاله يا اعمى.**")
 
 
 @Client.on_message(filters.command(["استئناف"], prefixes=f"{HNDLR}"))
@@ -66,12 +66,12 @@ async def pause(client, m: Message):
         try:
             await call_py.pause_stream(chat_id)
             await m.reply(
-                f"**تم استئناف الاغنية من حيث توقفت⚡️.**\n\n اذا تريد ايقافها ارسل ايقاف"
+                f"**استئنفت الاغنيه من مكان ما وقفتها 🤓.**\n\n لو عاوز تقفلها خالص اكتب ايقاف 🤓"
             )
         except Exception as e:
             await m.reply(f"**ERROR** \n`{e}`")
     else:
-        await m.reply("**  لايوجد شئ يشتغل حب ⚡.**")
+        await m.reply("** مفيش حاجه شغاله يا اعمى 🤓.**")
 
 
 @Client.on_message(filters.command(["ايقاف"], prefixes=f"{HNDLR}"))
@@ -83,9 +83,9 @@ async def resume(client, m: Message):
         try:
             await call_py.resume_stream(chat_id)
             await m.reply(
-                f"**تم ايقاف الاغنية بنجاح ⚡️**\n\nاذا تريد اعاده التشغيل اكتب {HNDLR} استئناف**"
+                f"**حاضر هوقفها اهو متزعقش 🥺**\n\nلو عاوز تشغلها تاني اكتب {HNDLR} استئناف**"
             )
         except Exception as e:
             await m.reply(f"**ERROR** \n`{e}`")
     else:
-        await m.reply("**لايوجد شئ يشتغل حب ⚡.**")
+        await m.reply("**مفيش حاجه شغاله يا اعمى 🤓.**")
