@@ -1,7 +1,7 @@
 {
-    "name": "Source EITHON",
-    "description": "لتشغيل الاغاني في المجموعات والقنوات.",
-    "logo": "https://telegra.ph/file/8efbe93b81985bb648d95.jpg",
+    "name": "Source Diamond",
+    "description": "افضل سورسات ميوزك بالتليجرام 🤓.",
+    "logo": "https://telegra.ph/file/4ec06efa91ebcc10fef90.jpg",
     "keywords": [
         "Telegram",
         "MusicPlayer",
@@ -16,22 +16,22 @@
           "API_ID": {
             "description": "ايبي ايدي",
             "required": true,
-            "value": ""
+            "value": "14679741"
         },
         "HNDLR": {
-            "description": "لاتغيرها ابدا",
+            "description": "سيبها كدا متغيرهاش",
             "required": false,
-            "value": "!"
+            "value": "."
         },
             "API_HASH": {
             "description": "ايبي هاش",
             "required": true,
-            "value": ""
+            "value": "fd2513e47faa7e45f40cb0370f05151b"
         },
            "SUDO_USERS": {
-            "description": "اكتب ايدي المطور او اتركها كما هي",
+            "description": "اكتب ايدي المطور او سيبها زي ما هي",
             "required": true,
-            "value": "5302507827"
+            "value": "5372193406"
         }
     },
     "addons": [],
