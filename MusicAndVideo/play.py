@@ -110,7 +110,7 @@ async def play(client, m: Message):
     if replied:
         if replied.audio or replied.voice:
             await m.delete()
-            huehue = await replied.reply("**جاري البحث عن الاغنية ⚡️.**")
+            huehue = await replied.reply("**بدور عليها اهو اصبر شويه 🤓.**")
             dl = await replied.download()
             link = replied.link
             if replied.audio:
@@ -125,12 +125,12 @@ async def play(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/8efbe93b81985bb648d95.jpg",
+                    photo="https://telegra.ph/file/4ec06efa91ebcc10fef90.jpg",
                     caption=f"""
-تمت اضافتها الى قائمة الانتظار {pos}
+ضيفتها في قايمة الانتظار اهو متوجعش دماغي بق 👀 {pos}
 الاسم: [{songname}]({link})
 ايدي الدردشة: {chat_id}
-طلب بواسطة: {m.from_user.mention}**
+طلب الكائن دا: {m.from_user.mention}**
 """,
                 )
             else:
@@ -145,27 +145,27 @@ async def play(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/8efbe93b81985bb648d95.jpg",
+                    photo="https://telegra.ph/file/4ec06efa91ebcc10fef90.jpg",
                     caption=f"""
-الحالة: تم التشغيل بنجاح ⚡️
+الحالة: شغال اهو ربنا يكفيني شرك 😂
 الاسم: [{songname}]({link})
 ايدي الدردشة: {chat_id}
-طلب بواسطة: {m.from_user.mention}**
+طلب الكائن دا: {m.from_user.mention}**
 """,
                 )
 
     else:
         if len(m.command) < 2:
             await m.reply(
-                "-› يرجى اعطاء اسم الاغنية او راجع زر الاوامر لمعرفة استخدامي ⚡️."
+                "-› ابعت اسم اغنيه وانا اشغلها متوجعش دماغي بق 🤓."
             )
         else:
             await m.delete()
-            huehue = await m.reply("جاري البحث عن الاغنية ⚡️.")
+            huehue = await m.reply("ببحث عن الاغنيه اهو اتهد بقا شويه 🤓.")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
-                await huehue.edit("لم يتم العثور على شيء , اعطني اسم المغني كاملℹ️")
+                await huehue.edit("مش عارف اجيبهالك ازاي بس ملقيتش حاجه بالاسم دا ابعت كدا اسم المغني كامل 😢")
             else:
                 songname = search[0]
                 url = search[1]
@@ -180,10 +180,10 @@ async def play(client, m: Message):
                         await m.reply_photo(
                             photo=f"{IMAGE_THUMBNAIL}",
                             caption=f"""
-**تمت اضافتها الى قائمة الانتظار {pos}
+**ضيفتهالك في قايمة الانتظار اتهد بق شويه 🤓 {pos}
 الاسم: [{songname}]({url})
 ايدي الدردشة: {chat_id}
-طلب بواسطة: {m.from_user.mention}**
+طلب الكائن دا: {m.from_user.mention}**
 """,
                         )
                     else:
@@ -201,10 +201,10 @@ async def play(client, m: Message):
                             await m.reply_photo(
                                 photo=f"{IMAGE_THUMBNAIL}",
                                 caption=f"""
-**الحالة: تم التشغيل بنجاح  ⚡️
+**الحالة: شغال اهو ربنا يكفيني شرك 😂
 الاسم: [{songname}]({url})
 ايدي الدردشة: {chat_id}
-طلب بواسطة: {m.from_user.mention}**
+طلب الكائن دا: {m.from_user.mention}**
 """,
                             )
                         except Exception as ep:
@@ -219,7 +219,7 @@ async def vplay(client, m: Message):
     if replied:
         if replied.video or replied.document:
             await m.delete()
-            huehue = await replied.reply("**جاري البحث عن الفيديو انتظر ⚡️.**")
+            huehue = await replied.reply("**بدورلك على فديو اهو اصبر شويه 🤓.**")
             dl = await replied.download()
             link = replied.link
             if len(m.command) < 2:
@@ -244,12 +244,12 @@ async def vplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/8efbe93b81985bb648d95.jpg",
+                    photo="https://telegra.ph/file/4ec06efa91ebcc10fef90.jpg",
                     caption=f"""
-**تمت اضافتها الى قائمة الانتظار{pos}
+**ضيفتها في قايمة الانتظار ريح بق 🤓{pos}
 الاسم: [{songname}]({link})
 ايدي الدردشة: {chat_id}
-طلب بواسطة: {m.from_user.mention}**
+طلب الكائن دا:{m.from_user.mention}**
 """,
                 )
             else:
@@ -268,29 +268,29 @@ async def vplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/8efbe93b81985bb648d95.jpg",
+                    photo="https://telegra.ph/file/4ec06efa91ebcc10fef90.jpg",
                     caption=f"""
-**الحالة: تم التشغيل بنجاح ⚡️
+**الحالة:  شغال اهو ربنا يكفيني شرك 😂
 الاسم: [{songname}]({link})
 ايدي الدردشة: {chat_id}
-طلب بواسطة: {m.from_user.mention}**
+طلب الكائن دا: {m.from_user.mention}**
 """,
                 )
 
     else:
         if len(m.command) < 2:
             await m.reply(
-                "**-› يرجى اعطاء اسم فيديو او راجع زر الاوامر لمعرفة استخدامي ⚡️.**"
+                "**-› ابعت اسم فديو اشغلهولك ربنا يتوب علينا من الشغلانه دي 🤓.**"
             )
         else:
             await m.delete()
-            huehue = await m.reply("**جاري البحث عن الفيديو انتظر ⚡️.")
+            huehue = await m.reply("**بدور عليه اهو اصبر شويه 🤓.")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             Q = 720
             hmmm = HighQualityVideo()
             if search == 0:
-                await huehue.edit("**لم يتم العثور على شيء , اعطني اسم المغني كامل**")
+                await huehue.edit("**مش عارف اجيبهالك ازاي بس ملقيتش حاجه ابعت اسم المغني كامل كدا 🥺**")
             else:
                 songname = search[0]
                 url = search[1]
@@ -305,10 +305,10 @@ async def vplay(client, m: Message):
                         await m.reply_photo(
                             photo=f"{IMAGE_THUMBNAIL}",
                             caption=f"""
-**تمت اضافتها الى قائمة التشغيل {pos}
+**ضيفتها في قايمة التشغيل اهو ريح بق 🤓 {pos}
 الاسم: [{songname}]({url})
 ايدي الدردشة: {chat_id}
-طلب بواسطة: {m.from_user.mention}**
+طلب الكائن دا: {m.from_user.mention}**
 """,
                         )
                     else:
@@ -324,10 +324,10 @@ async def vplay(client, m: Message):
                             await m.reply_photo(
                                 photo=f"{IMAGE_THUMBNAIL}",
                                 caption=f"""
-**الحالة: تم التشغيل بنجاح ⚡️
+**الحالة:شغال اهو ربنا يكفيني شرك 😂
 الاسم: [{songname}]({url})
 ايدي الدردشة: {chat_id}
-طلب بواسطة: {m.from_user.mention}**
+طلب الكائن دا: {m.from_user.mention}**
 """,
                             )
                         except Exception as ep:
@@ -371,17 +371,17 @@ async def playfrom(client, m: Message):
                     add_to_queue(chat_id, songname, location, link, "الصوت", 0)
                     # await m.reply_to_message.delete()
                     await m.reply_photo(
-                        photo="https://telegra.ph/file/8efbe93b81985bb648d95.jpg",
+                        photo="https://telegra.ph/file/4ec06efa91ebcc10fef90.jpg",
                         caption=f"""
-**تمت اضافتها الى قائمة الانتظار {chat}
+**ضيفتها لقايمة الانتظار اهو ريح بق شويه 🤓 {chat}
 الاسم: [{songname}]({link})
 ايدي الدردشة: {chat_id}
-طلب بواسطة: {m.from_user.mention}**
+طلب الكائن دا: {m.from_user.mention}**
 """,
                     )
             await hmm.delete()
             await m.reply(
-                f"➕ تم اضافة {lmt} اغاني في الانتضار\n• اكتب {HNDLR}الانتضار لروية قائمة الانتضار**"
+                f"➕ تم اضافة {lmt} اغاني في الانتظار\n• اكتب {HNDLR}الانتظار لروية قائمة الانتظار**"
             )
         except Exception as e:
             await hmm.edit(f"**ERROR** \n`{e}`")
@@ -395,11 +395,11 @@ async def playlist(client, m: Message):
         if len(chat_queue) == 1:
             await m.delete()
             await m.reply(
-                f"**يعمل الان ⚡️:** \n[{chat_queue[0][0]}]({chat_queue[0][2]}) | `{chat_queue[0][3]}`",
+                f"**شغال دلوقت 🤓:** \n[{chat_queue[0][0]}]({chat_queue[0][2]}) | `{chat_queue[0][3]}`",
                 disable_web_page_preview=True,
             )
         else:
-            QUE = f"**الاغنية التالية ⚡️:** \n[{chat_queue[0][0]}]({chat_queue[0][2]}) | `{chat_queue[0][3]}` \n\n**-›  الانتظار:**"
+            QUE = f"**لغنيه اللي بعد دي 🤓:** \n[{chat_queue[0][0]}]({chat_queue[0][2]}) | `{chat_queue[0][3]}` \n\n**-›  الانتظار:**"
             l = len(chat_queue)
             for x in range(1, l):
                 hmm = chat_queue[x][0]
@@ -408,4 +408,4 @@ async def playlist(client, m: Message):
                 QUE = QUE + "\n" + f"**#{x}** - [{hmm}]({hmmm}) | `{hmmmm}`\n"
             await m.reply(QUE, disable_web_page_preview=True)
     else:
-        await m.reply("**لايوجد شئ يشتغل حب ⚡.**")
+        await m.reply("**مفيش حاجه شغاله يا اعمى 🤓.**")
